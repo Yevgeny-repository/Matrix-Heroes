@@ -1,0 +1,9 @@
+<h2>Heroes List</h2>
+
+<div class="container">
+    <div *ngFor="let hero of heroes">
+        <div>
+            <a class="hero-link" [routerLink]="['/hero-details', hero.id]">{{hero.name}} (current power: {{hero.current_power}}) </a>
+        </div>
+    </div>
+</div>

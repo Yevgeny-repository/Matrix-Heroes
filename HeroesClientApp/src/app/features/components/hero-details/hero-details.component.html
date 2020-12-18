@@ -1,0 +1,36 @@
+<h2>Hero Details</h2>
+
+<div class="container">
+    <div>
+        <div  class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{selectedHero?.name}}</h5>
+                <div>
+                    <label>Ability: {{selectedHero?.ability}}</label>
+                </div>
+                <div>
+                    <label>Date: {{selectedHero?.date | date: 'dd/MM/yyyy'}}</label>
+                </div>
+                <div>
+                    <label>Suit: {{selectedHero?.suit}}</label>
+                </div>
+                <div>
+                    <label>Starting power: {{selectedHero?.starting_power}}</label>
+                </div>
+                <div>
+                    <label>Current power: {{selectedHero?.current_power}}</label>
+                </div>
+                <div *ngIf="selectedHero?.trainingCount < 5" class="text-primary">
+                    <input type="button" class="btn btn-primary" (click)="trainHero(selectedHero)" value="Train" />
+                </div>
+                <div *ngIf="selectedHero?.trainingCount > 4" class="text-primary">
+                    A hero can train 5 times a day maximum 
+                </div>
+      
+            </div>
+        </div>
+        <div>
+            <a class="hero-link" [routerLink]="['/heroes-screen']">Back to heroes </a>
+        </div>
+    </div>
+</div>
